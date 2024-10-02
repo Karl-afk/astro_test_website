@@ -17,7 +17,6 @@ let emojiReactions: PostReactions | null = null;
 if (shouldUseBackendServices) {
   try {
     let response = await GET(Astro);
-    console.log(response);
     const json = await (response as Response).json();
     emojiReactions = json as PostReactions;
     if ("error" in json) {
