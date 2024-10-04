@@ -66,15 +66,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        header: "#f86423",
-        "header-foreground": "#000",
-        link: "#f86423",
-        "link-dark": "#f86423",
+        header: "#000",
+        "header-foreground": "#fff",
+        "header-dropdown": "#1e293b",
+        "header-dropdown-foreground": "#fff",
+        link: "#2563EB",
+        "link-dark": "#3e7afe",
         primary: {
-          500: "#f86423",
-          600: "#db5215",
+          500: "#2563EB",
+          600: "#1D4ED8",
         },
-        "primary-foreground": "#000",
+        "primary-foreground": "#fff",
       },
 ```
 

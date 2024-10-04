@@ -7,6 +7,8 @@ module.exports = {
       colors: {
         header: "#000",
         "header-foreground": "#fff",
+        "header-dropdown": "#1e293b",
+        "header-dropdown-foreground": "#fff",
         link: "#2563EB",
         "link-dark": "#3e7afe",
         primary: {
