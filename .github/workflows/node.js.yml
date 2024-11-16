@@ -6,8 +6,6 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -29,23 +27,11 @@ jobs:
     - run: npm ci
     - run: npm install
     - run: npm run build
-    # 👇 Store the dist folder
-    - uses: actions/upload-artifact@v3
+    - name: Deploy over FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        name: app-build
-        path: dist
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Deploy over FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ae891.netcup.net
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /astro.karlweinmueller.de/httpdocs/
-          local-dir: ./dist/
+        server: ae891.netcup.net
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /astro.karlweinmueller.de/httpdocs/
+        local-dir: ./dist/
