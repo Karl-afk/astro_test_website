@@ -47,5 +47,5 @@ jobs:
           server: ae891.netcup.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /astro.karlweinmueller.de/httpdocs
+          server-dir: /astro.karlweinmueller.de/httpdocs/
           local-dir: ./dist/
